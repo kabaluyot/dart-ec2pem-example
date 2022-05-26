@@ -25,12 +25,14 @@ void main() {
   String pubKeyBase64 = base64Encode(pubKeyPem.codeUnits);
   print('PubKey base64: $pubKeyBase64');
 
-  // decode public key from prem
+  // decode keys from pem
+  final ECPrivateKey decodedPrivKey =
+      CryptoUtils.ecPrivateKeyFromPem(privKeyPem);
   final ECPublicKey decodedPubKey = CryptoUtils.ecPublicKeyFromPem(pubKeyPem);
 
   // sign message
   final Uint8List message = Uint8List.fromList("Hello world!".codeUnits);
-  final ECSignature signature = CryptoUtils.ecSign(privKey, message,
+  final ECSignature signature = CryptoUtils.ecSign(decodedPrivKey, message,
       algorithmName: 'SHA-1/ECDSA'); // can be SHA-256/ECDSA or other
   Uint8List rUint8ListV2 = MathUtils.encodeBigInt(signature.r);
   Uint8List sUint8ListV2 = MathUtils.encodeBigInt(signature.s);
