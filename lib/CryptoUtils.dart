@@ -29,8 +29,10 @@ class CryptoUtils {
   static const BEGIN_EC_PRIVATE_KEY = '-----BEGIN EC PRIVATE KEY-----';
   static const END_EC_PRIVATE_KEY = '-----END EC PRIVATE KEY-----';
 
-  static const BEGIN_EC_PUBLIC_KEY = '-----BEGIN PUBLIC KEY-----';
-  static const END_EC_PUBLIC_KEY = '-----END PUBLIC KEY-----';
+  static const BEGIN_EC_PUBLIC_KEY =
+      '-----BEGIN PUBLIC KEY-----'; // NOTE: add changes
+  static const END_EC_PUBLIC_KEY =
+      '-----END PUBLIC KEY-----'; // NOTE: add changes
 
   static const BEGIN_RSA_PRIVATE_KEY = '-----BEGIN RSA PRIVATE KEY-----';
   static const END_RSA_PRIVATE_KEY = '-----END RSA PRIVATE KEY-----';
